@@ -10,23 +10,21 @@
                             <div class="rounded-circle bg-white p-2 d-inline-block shadow-lg mb-3">
                               <img src="{{ asset('img/me.jpeg') }}" class="rounded-circle" width="100" height="100" style="object-fit: cover;" alt="Foto Profil Saya">
                             </div>
-                            <h4 class="fw-bold">Firda Rahayu</h4>
+                            <h4 class="fw-bold">{{ $profile->name }}</h4>
                             <p class="small opacity-75">Teknik Informatika</p>
                         </div>
                     </div>
                     <div class="col-md-8 p-5">
                         <h2 class="fw-bold text-dark mb-3">About Me</h2>
                         <p class="text-muted">
-                            Halo! Saya sedang menempuh mata kuliahWorkshop Pemrograman Framework.
-                            Fokus saya saat ini adalah mendalami ekosistem Laravel untuk menciptakan solusi web yang efisien
-                            dan skalabel.
+                            {{ $profile->bio }}
                         </p>
 
                         <hr class="my-4 opacity-25">
 
                         <div class="row text-center mb-4">
                             <div class="col-4">
-                                <h5 class="fw-bold text-primary mb-0">10+</h5>
+                                <h5 class="fw-bold text-primary mb-0">3+</h5>
                                 <small class="text-muted">Projects</small>
                             </div>
                             <div class="col-4 border-start border-end">
