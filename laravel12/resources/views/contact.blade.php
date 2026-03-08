@@ -1,22 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row justify-content-center animate-up">
+<div class="row justify-content-center">
     <div class="col-md-6">
         <div class="card custom-card p-4">
             <h2 class="fw-bold mb-4 text-center">Contact Me</h2>
-            <form>
+
+            @if(session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
+
+            <form action="{{ route('contact.store') }}" method="POST">
+                @csrf
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
-                    <input type="text" class="form-control" placeholder="Nama Anda">
+                    <input type="text" name="nama" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control" placeholder="Email Anda">
+                    <input type="email" name="email" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Pesan</label>
-                    <textarea class="form-control" rows="4" placeholder="Tulis pesan..."></textarea>
+                    <textarea name="isi_pesan" class="form-control" rows="4" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary w-100 rounded-pill">Kirim Pesan</button>
             </form>
